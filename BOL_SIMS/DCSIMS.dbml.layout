@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.625, 12.125" name="DCSIMS">
+  <DataContextMoniker Name="/DCSIMSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6c76d9fd-787d-467c-9327-5400420ef0a9" absoluteBounds="3.75, 0.875, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19106145-3870-4206-af86-32bba8f2d343" absoluteBounds="3.765, 1.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c677601f-d677-48b3-8b58-726927a8d411" absoluteBounds="0.75, 0.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_menu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3631a3fc-cb73-4d6f-b16b-ebe61ebe7655" absoluteBounds="0.765, 1.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd642f4e-2576-4198-b964-1a8716e7c527" absoluteBounds="0.75, 5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="823b5409-3016-46e0-a2be-0a4dbe6da617" absoluteBounds="0.765, 5.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4df44e4-eab0-42fb-acc5-a0a552870719" absoluteBounds="3.5, 5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_rolemenu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ad0a8e1-824c-41c3-af23-8e39e63b2c8d" absoluteBounds="3.515, 5.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eaa53a86-0a9a-4a02-9543-f11c83706c29" absoluteBounds="0.75, 8.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_university" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c8972dc-ebac-47a6-bac6-5c51ec6f65bc" absoluteBounds="0.765, 9.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8adb6ab-b3a5-4ac5-abbb-480193671e9c" absoluteBounds="6.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_usermenu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46eceb22-44f6-4a5a-8e0c-f3b939c90d91" absoluteBounds="6.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14b6c52c-1095-4b97-acd5-f732e8bf9816" absoluteBounds="6.5, 5, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_userrole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d13b4b97-3000-4b35-adb3-b7cbdd73ac02" absoluteBounds="6.515, 5.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 0.78125); (3.59375 : 0.78125); (3.59375 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCSIMSDataContext/TBL_menu/TBL_menu_TBL_rolemenu" />
+      <nodes>
+        <classShapeMoniker Id="c677601f-d677-48b3-8b58-726927a8d411" />
+        <classShapeMoniker Id="c4df44e4-eab0-42fb-acc5-a0a552870719" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.36620198567708); (3.5 : 6.36620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCSIMSDataContext/TBL_role/TBL_role_TBL_rolemenu" />
+      <nodes>
+        <classShapeMoniker Id="bd642f4e-2576-4198-b964-1a8716e7c527" />
+        <classShapeMoniker Id="c4df44e4-eab0-42fb-acc5-a0a552870719" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 0.75); (1.75 : 0.5); (6.125 : 0.5); (6.125 : 2.70775448209635); (6.5 : 2.70775448209635)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCSIMSDataContext/TBL_menu/TBL_menu_TBL_usermenu" />
+      <nodes>
+        <classShapeMoniker Id="c677601f-d677-48b3-8b58-726927a8d411" />
+        <classShapeMoniker Id="f8adb6ab-b3a5-4ac5-abbb-480193671e9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 1.62060099283854); (6.04166666666667 : 1.62060099283854 : JumpStart); (6.20833333333333 : 1.62060099283854 : JumpEnd); (6.5 : 1.62060099283854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCSIMSDataContext/TBL_account/TBL_account_TBL_usermenu" />
+      <nodes>
+        <classShapeMoniker Id="6c76d9fd-787d-467c-9327-5400420ef0a9" />
+        <classShapeMoniker Id="f8adb6ab-b3a5-4ac5-abbb-480193671e9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.73240397135417); (3.125 : 8.10740397135417); (3.125 : 8.29970540364583); (6.125 : 8.29970540364583); (6.5 : 7.92470540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DCSIMSDataContext/TBL_role/TBL_role_TBL_userrole" />
+      <nodes>
+        <classShapeMoniker Id="bd642f4e-2576-4198-b964-1a8716e7c527" />
+        <classShapeMoniker Id="14b6c52c-1095-4b97-acd5-f732e8bf9816" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 3.9920068359375); (5.65625 : 7.8285521875); (6.5 : 7.8285521875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCSIMSDataContext/TBL_account/TBL_account_TBL_userrole" />
+      <nodes>
+        <classShapeMoniker Id="6c76d9fd-787d-467c-9327-5400420ef0a9" />
+        <classShapeMoniker Id="14b6c52c-1095-4b97-acd5-f732e8bf9816" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e47c14cc-6ec2-4bf9-abc0-bdd5120aeef7" absoluteBounds="11.375, 4, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DCSIMSDataContext/TBL_view_manegerole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa667566-501b-49f1-9f7a-3eaf44c5b1f9" absoluteBounds="11.39, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

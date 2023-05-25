@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_SIMS" Class="DCSIMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.TBL_account" Member="TBL_accounts">
+    <Type Name="TBL_account">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="userstatus" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="usertype" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="createdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="createtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastmodifieddate" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastmodifiedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lastmodifiedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="loginstatus" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Association Name="TBL_account_TBL_usermenu" Member="TBL_usermenus" ThisKey="username" OtherKey="username" Type="TBL_usermenu" />
+      <Association Name="TBL_account_TBL_userrole" Member="TBL_userroles" ThisKey="username" OtherKey="username" Type="TBL_userrole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_menu" Member="TBL_menus">
+    <Type Name="TBL_menu">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="menuid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="parentid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="menuname" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="menulink" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="createdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="createtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastmodifieddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lastmodifiedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lastmodifiedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Association Name="TBL_menu_TBL_rolemenu" Member="TBL_rolemenus" ThisKey="menuid" OtherKey="menuId" Type="TBL_rolemenu" />
+      <Association Name="TBL_menu_TBL_usermenu" Member="TBL_usermenus" ThisKey="menuid" OtherKey="menuId" Type="TBL_usermenu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_role" Member="TBL_roles">
+    <Type Name="TBL_role">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="roleid" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rolename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="createdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="createtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastmodifieddate" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastmodifiedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lastmodifiedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Association Name="TBL_role_TBL_rolemenu" Member="TBL_rolemenus" ThisKey="roleid" OtherKey="roleid" Type="TBL_rolemenu" />
+      <Association Name="TBL_role_TBL_userrole" Member="TBL_userroles" ThisKey="roleid" OtherKey="roleid" Type="TBL_userrole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_rolemenu" Member="TBL_rolemenus">
+    <Type Name="TBL_rolemenu">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="roleid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="menuId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="assigneddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lastassignedddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="assignedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastassignedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="assignedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lastassignedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="TBL_menu_TBL_rolemenu" Member="TBL_menu" ThisKey="menuId" OtherKey="menuid" Type="TBL_menu" IsForeignKey="true" />
+      <Association Name="TBL_role_TBL_rolemenu" Member="TBL_role" ThisKey="roleid" OtherKey="roleid" Type="TBL_role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_university" Member="TBL_universities">
+    <Type Name="TBL_university">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="univid" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="univname" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="createddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="createdtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="createdby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="modifieddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="modifiedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="modifiedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="systid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="systname" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_usermenu" Member="TBL_usermenus">
+    <Type Name="TBL_usermenu">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="menuId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="assigneddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lastassignedddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="assignedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastassignedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="assignedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lastassignedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="TBL_menu_TBL_usermenu" Member="TBL_menu" ThisKey="menuId" OtherKey="menuid" Type="TBL_menu" IsForeignKey="true" />
+      <Association Name="TBL_account_TBL_usermenu" Member="TBL_account" ThisKey="username" OtherKey="username" Type="TBL_account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_userrole" Member="TBL_userroles">
+    <Type Name="TBL_userrole">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userroleid" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="roleid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="assigneddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="assignedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="lastassignedddate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lastassignedtime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="assignedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lastassignedby" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Association Name="TBL_role_TBL_userrole" Member="TBL_role" ThisKey="roleid" OtherKey="roleid" Type="TBL_role" IsForeignKey="true" />
+      <Association Name="TBL_account_TBL_userrole" Member="TBL_account" ThisKey="username" OtherKey="username" Type="TBL_account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_view_manegerole" Member="TBL_view_manegeroles">
+    <Type Name="TBL_view_manegerole">
+      <Column Name="username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="menuid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="parentid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="menuname" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="menulink" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
