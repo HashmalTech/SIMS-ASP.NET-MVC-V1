@@ -7,4 +7,8 @@ it works the following functionality
       - Model (BOL_SIMS) --- the Business Object Layer
       - View(SIMS) --- the view of peresentation Layer
       - Controller(BLL_SIMS) ---- Business Logic Layer
- -  it usese treeview to display as left bar Menu   
+ -  it usese treeview to display as left bar Menu  
+ -  The database is found in Database Folder 
+      - DB_SIMS
+      - Insert
+      - View -unamed relation with the name of TBL_view_managerole
