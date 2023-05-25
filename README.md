@@ -12,3 +12,12 @@ it works the following functionality
       - DB_SIMS
       - Insert
       - View -unamed relation with the name of TBL_view_managerole
+
+
+View
+
+![image](https://github.com/HashmalTech/SIMS-ASP.NET-MVC-V1/assets/116974352/f1d1db32-1a4d-4bab-888d-890aa6740c3d)
+
+![image](https://github.com/HashmalTech/SIMS-ASP.NET-MVC-V1/assets/116974352/c573a098-7373-49b6-88b2-02a632e77a0c)
+
+![image](https://github.com/HashmalTech/SIMS-ASP.NET-MVC-V1/assets/116974352/e38cd9ea-1512-4283-91c8-eeede456c5a7)
